@@ -7,9 +7,13 @@ function majorityElement(nums) {
         else
             arr.push(countMajor(nums, nums[i]));
     }
-    console.log(...[1, 2, 3, 4]);
-    console.log([1, 2, 3, 4]);
-    return (1);
+    let ret = arr.reduce((maxObj, obj) => {
+        if (obj.amount > maxObj.amount)
+            return obj;
+        else
+            return maxObj;
+    }, arr[0]);
+    return (ret.val);
 }
 ;
 const countMajor = (nums, target) => {
